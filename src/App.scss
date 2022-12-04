@@ -1,0 +1,160 @@
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body{
+  background-color: #023e52;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif ;
+}
+
+button,
+input,
+select{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.App{
+}
+
+.manage-products{
+  display: flex;
+  justify-content: space-between;
+
+  & > *{
+    flex: 1;
+  }
+}
+
+.productList{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px, 22%));
+  justify-content: space-around;
+  grid-auto-rows: minmax(400px, 1fr);
+  padding: 20px;
+  gap: 20px;
+  justify-items: start;
+}
+
+.product{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  border: 2px solid blueviolet;
+  overflow: hidden;
+  border-radius: 22px;
+  padding-bottom: 10px;
+
+  &__image{
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      max-width: 100%;
+      object-fit: cover;
+    }
+    margin-bottom: auto;
+  }
+
+  p{
+    margin: 5px 0;
+  }
+
+  .product__action-buttons{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+
+    button{
+      padding: 5px 15px;
+      border: 1px solid black;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      color: white;
+      margin: 5px;
+
+    }
+
+    .button__edit{
+      background-color: #bbb
+    }
+
+    .button__delete{
+      background-color: #ff0000;
+    }
+  }
+}
+
+#addForm,
+#editForm{
+  width: 30%;
+  padding: 20px;
+
+  h1{
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
+  
+  label, 
+  input{
+    margin-bottom: 5px;
+  }
+  
+  input{
+    display: block;
+    width: 100%;
+  }
+
+  label,
+  span{
+    display: inline-block;
+  }
+
+  span.error{
+    margin-left: 10px;
+    font-size: 10px;
+    color: #ff0000;
+    background-color: black;
+
+    .link-pattern{
+      margin: 5px;
+      font-size: 12px;
+      color: white;
+      font-weight: 700;    
+    }
+  }
+
+  button{
+    padding: 7px 15px;
+    border: 2px solid;
+  }
+
+  input{
+    padding: 5px;
+
+    &:focus{
+      outline: 2px solid rgb(165, 218, 32);
+    }
+  }
+  div[class*='available']{
+    display: flex;
+    margin: 10px 0;
+    flex-wrap: wrap;
+
+    label{
+      margin: 0;
+      width: auto;
+    }
+
+    select{
+      margin-left: 20px;
+    }
+  }
+}
